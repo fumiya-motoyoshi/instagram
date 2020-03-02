@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,12 @@
 		885AD669240665840056A6EC /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885AD668240665840056A6EC /* ImageSelectViewController.swift */; };
 		885AD66B240665FD0056A6EC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885AD66A240665FD0056A6EC /* PostViewController.swift */; };
 		885AD66D2406660D0056A6EC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885AD66C2406660D0056A6EC /* SettingViewController.swift */; };
+		88608669240B88D800613441 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88608668240B88D800613441 /* Const.swift */; };
+		8860866B240BBB7700613441 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860866A240BBB7700613441 /* PostData.swift */; };
+		8860866E240BBC5300613441 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860866C240BBC5300613441 /* PostTableViewCell.swift */; };
+		8860866F240BBC5300613441 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8860866D240BBC5300613441 /* PostTableViewCell.xib */; };
+		88608671240C9C7100613441 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88608670240C9C7100613441 /* CommentViewController.swift */; };
+		88FB1076240B5FFE001DABA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88FB1075240B5FFE001DABA1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		885AD668240665840056A6EC /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		885AD66A240665FD0056A6EC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		885AD66C2406660D0056A6EC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		88608668240B88D800613441 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		8860866A240BBB7700613441 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		8860866C240BBC5300613441 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		8860866D240BBC5300613441 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		88608670240C9C7100613441 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		88FB1075240B5FFE001DABA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE720741742BA1EFD1B0855B /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +68,6 @@
 				EE720741742BA1EFD1B0855B /* Pods-Instagram.debug.xcconfig */,
 				1BC591D29587134BA4B3C771 /* Pods-Instagram.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,12 +97,18 @@
 				885AD6562406610F0056A6EC /* Main.storyboard */,
 				885AD659240661110056A6EC /* Assets.xcassets */,
 				885AD65B240661110056A6EC /* LaunchScreen.storyboard */,
+				88FB1075240B5FFE001DABA1 /* GoogleService-Info.plist */,
 				885AD65E240661110056A6EC /* Info.plist */,
 				885AD664240665230056A6EC /* LoginViewController.swift */,
 				885AD666240665470056A6EC /* HomeViewController.swift */,
 				885AD668240665840056A6EC /* ImageSelectViewController.swift */,
 				885AD66A240665FD0056A6EC /* PostViewController.swift */,
 				885AD66C2406660D0056A6EC /* SettingViewController.swift */,
+				88608668240B88D800613441 /* Const.swift */,
+				8860866A240BBB7700613441 /* PostData.swift */,
+				8860866C240BBC5300613441 /* PostTableViewCell.swift */,
+				8860866D240BBC5300613441 /* PostTableViewCell.xib */,
+				88608670240C9C7100613441 /* CommentViewController.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -165,6 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				885AD65D240661110056A6EC /* LaunchScreen.storyboard in Resources */,
+				8860866F240BBC5300613441 /* PostTableViewCell.xib in Resources */,
+				88FB1076240B5FFE001DABA1 /* GoogleService-Info.plist in Resources */,
 				885AD65A240661110056A6EC /* Assets.xcassets in Resources */,
 				885AD6582406610F0056A6EC /* Main.storyboard in Resources */,
 			);
@@ -220,12 +239,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				885AD66B240665FD0056A6EC /* PostViewController.swift in Sources */,
+				8860866B240BBB7700613441 /* PostData.swift in Sources */,
 				885AD665240665230056A6EC /* LoginViewController.swift in Sources */,
 				885AD6552406610F0056A6EC /* ViewController.swift in Sources */,
 				885AD6532406610F0056A6EC /* AppDelegate.swift in Sources */,
 				885AD669240665840056A6EC /* ImageSelectViewController.swift in Sources */,
+				88608669240B88D800613441 /* Const.swift in Sources */,
+				8860866E240BBC5300613441 /* PostTableViewCell.swift in Sources */,
 				885AD66D2406660D0056A6EC /* SettingViewController.swift in Sources */,
 				885AD667240665470056A6EC /* HomeViewController.swift in Sources */,
+				88608671240C9C7100613441 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
