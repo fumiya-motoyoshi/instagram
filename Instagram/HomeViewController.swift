@@ -183,9 +183,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let nextView = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
         
             //それを画面遷移先であるコメント投稿画面に渡す
-            
-        
-        
+            nextView.postData = postData
         
             // 画面遷移する
             self.present(nextView, animated: true, completion: nil)
