@@ -123,12 +123,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
         //commentボタン
-        cell.commentButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside) //追加
+        cell.commentButton.addTarget(self, action: #selector(commentButton(_:forEvent:)), for: .touchUpInside) //追加
         
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // likeボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
         
@@ -140,8 +140,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
         
-        
-        //1. Likeボタン押下時の処理
         // Firebaseに保存するデータの準備
         if let uid = Auth.auth().currentUser?.uid {
             if postData.isLiked {
@@ -164,25 +162,35 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let likes = ["likes": postData.likes]
             postRef.updateChildValues(likes)
         }
+    }
         
-        //2. コメントボタン押下時の処理
+    //コメントボタン押下時の処理
+    @objc func commentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        //どの投稿データに保存するかわかる必要があるので、postDataをindexPathで取得する
+            // タップされたセルのインデックスを求める
+            let touch = event.allTouches?.first
+            let point = touch!.location(in: self.tableView)
+            let indexPath = tableView.indexPathForRow(at: point)
+        
+            // 配列からタップされたインデックスのデータを取り出す
+            let postData = postArray[indexPath!.row]
+        
+        //画面遷移
+        
+            // 遷移先ViewControllerのインスタンス取得
+            let nextView = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        
+            //それを画面遷移先であるコメント投稿画面に渡す
+            
         
         
-        //もしコメントボタンが押されたら・・・
         
-        //どの投稿データに保存するかわかる必要があるので、postDataをindexPathで取得する Done
-        //それを画面遷移先であるコメント投稿画面に渡す
-        
-        //画面遷移　https://capibara1969.com/684/
-        // storyboardのインスタンス取得（別のstoryboardの場合）
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        // 遷移先ViewControllerのインスタンス取得
-        let nextView = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
-        
-        // 画面遷移する
-        self.present(nextView, animated: true, completion: nil)
+            // 画面遷移する
+            self.present(nextView, animated: true, completion: nil)
         
     }
 
 }
+

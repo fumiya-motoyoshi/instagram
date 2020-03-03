@@ -55,7 +55,16 @@ class PostTableViewCell: UITableViewCell {
         //それらをひとつひとつ改行して表示 \nで設定可能
         //そのまとまり全部がひとつのLabelに入ってくるイメージ
         
-        self.commentLabel.text = "\(postData.comment!)"
+        let line = "---------------------------------------------------------\n"
+        var displaycomment = ""
+        
+        //配列から情報を持ってくるときはFor文を活用する
+        //配列一件一件が以下commentに入ってくるイメージ
+        for comment in postData.comments {
+            displaycomment = displaycomment + comment + "\n"
+        }
+        
+        self.commentLabel.text = line + displaycomment
         
         
     }
