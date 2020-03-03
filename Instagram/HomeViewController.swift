@@ -119,7 +119,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.setPostData(postArray[indexPath.row])
         
         // セル内のボタンのアクションをソースコードで設定する
+        //likeボタン
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
+        //commentボタン
+        cell.commentButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside) //追加
         
         return cell
     }
@@ -136,6 +140,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
         
+        
+        //1. Likeボタン押下時の処理
         // Firebaseに保存するデータの準備
         if let uid = Auth.auth().currentUser?.uid {
             if postData.isLiked {
@@ -157,20 +163,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
             let likes = ["likes": postData.likes]
             postRef.updateChildValues(likes)
-            
         }
+        
+        //2. コメントボタン押下時の処理
+        
+        
+        //もしコメントボタンが押されたら・・・
+        
+        //どの投稿データに保存するかわかる必要があるので、postDataをindexPathで取得する Done
+        //それを画面遷移先であるコメント投稿画面に渡す
+        
+        //画面遷移　https://capibara1969.com/684/
+        // storyboardのインスタンス取得（別のstoryboardの場合）
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 遷移先ViewControllerのインスタンス取得
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        
+        // 画面遷移する
+        self.present(nextView, animated: true, completion: nil)
+        
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

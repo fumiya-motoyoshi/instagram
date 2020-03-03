@@ -22,7 +22,7 @@
 		8860866B240BBB7700613441 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860866A240BBB7700613441 /* PostData.swift */; };
 		8860866E240BBC5300613441 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860866C240BBC5300613441 /* PostTableViewCell.swift */; };
 		8860866F240BBC5300613441 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8860866D240BBC5300613441 /* PostTableViewCell.xib */; };
-		88608671240C9C7100613441 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88608670240C9C7100613441 /* CommentViewController.swift */; };
+		88FA9BB3240CA61500C422EA /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA9BB2240CA61500C422EA /* CommentViewController.swift */; };
 		88FB1076240B5FFE001DABA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88FB1075240B5FFE001DABA1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		8860866A240BBB7700613441 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		8860866C240BBC5300613441 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8860866D240BBC5300613441 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		88608670240C9C7100613441 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		88FA9BB2240CA61500C422EA /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		88FB1075240B5FFE001DABA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE720741742BA1EFD1B0855B /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +108,7 @@
 				8860866A240BBB7700613441 /* PostData.swift */,
 				8860866C240BBC5300613441 /* PostTableViewCell.swift */,
 				8860866D240BBC5300613441 /* PostTableViewCell.xib */,
-				88608670240C9C7100613441 /* CommentViewController.swift */,
+				88FA9BB2240CA61500C422EA /* CommentViewController.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				8860866E240BBC5300613441 /* PostTableViewCell.swift in Sources */,
 				885AD66D2406660D0056A6EC /* SettingViewController.swift in Sources */,
 				885AD667240665470056A6EC /* HomeViewController.swift in Sources */,
-				88608671240C9C7100613441 /* CommentViewController.swift in Sources */,
+				88FA9BB3240CA61500C422EA /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

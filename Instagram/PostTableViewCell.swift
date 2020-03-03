@@ -10,16 +10,15 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton! //追加
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel! //追加
     
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -50,8 +49,16 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        //追加　ユーザ名とコメントをキャプションの下に表示
+        //ユーザとコメントをひとつのまとまりとして管理する（:でまとめることが可能）
+        //それらをひとつひとつ改行して表示 \nで設定可能
+        //そのまとまり全部がひとつのLabelに入ってくるイメージ
+        
+        self.commentLabel.text = "\(postData.comment!)"
+        
+        
     }
     
-    
-    
 }
+
